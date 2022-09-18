@@ -1,8 +1,5 @@
 package com.crud.tasks.config;
 
-import com.crud.tasks.controller.TaskController;
-import com.crud.tasks.controller.TrelloController;
-import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +25,7 @@ public class CoreConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.regex("/v1/tasks/.*"))
+                .paths(PathSelectors.any())
                 .build();
     }
 
